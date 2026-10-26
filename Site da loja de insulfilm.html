@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>[Nome da Loja] – Insulfilm automotivo, residencial e comercial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f3f6f7; --surface:#ffffff; --ink:#14201f; --muted:#546563; --line:#d5dfe0;
+  --glass:#0f1c1e; --glass-ink:#eaf2f2; --sun:#f0a81c; --sun-ink:#1a1200;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1517; --surface:#142022; --ink:#e8f0f0; --muted:#9db1b0; --line:#25383a;
+    --glass:#050b0c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1517; --surface:#142022; --ink:#e8f0f0; --muted:#9db1b0; --line:#25383a;
+  --glass:#050b0c; color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px;font-weight:800}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 32px}
+
+/* topo */
+header{background:var(--glass);color:var(--glass-ink)}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1040px;margin:0 auto;gap:16px}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.2rem;text-decoration:none}
+nav{display:flex;gap:20px;font-size:.95rem}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover{opacity:1}
+@media(max-width:640px){nav{display:none}}
+
+/* hero com seletor de película */
+.hero{padding:40px 0 64px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:800;max-width:16ch}
+.hero p{max-width:52ch;color:#b8cccc;margin:16px 0 28px}
+.btn{display:inline-block;background:var(--sun);color:var(--sun-ink);font-weight:600;padding:14px 24px;border-radius:10px;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.btn.alt{background:transparent;color:inherit;border:1.5px solid currentColor;margin-left:8px}
+.demo{margin-top:40px;border-radius:16px;overflow:hidden;border:1px solid #2a3f41;background:#0a1416}
+.scene{position:relative;height:240px;background:linear-gradient(180deg,#9fd3ef 0%,#f6dca0 62%,#d89a4a 100%)}
+.sun{position:absolute;right:14%;top:26px;width:70px;height:70px;border-radius:50%;background:#fff6c8;box-shadow:0 0 60px 20px #ffe9a0}
+.hills{position:absolute;left:0;right:0;bottom:0;height:70px;background:#4a5a3a;clip-path:polygon(0 60%,25% 20%,50% 55%,75% 15%,100% 50%,100% 100%,0 100%)}
+.tint{position:absolute;inset:0;background:#000;opacity:.3;transition:opacity .15s}
+.frame{position:absolute;inset:0;border:14px solid #1b2526;border-radius:12px;pointer-events:none}
+.ctrl{padding:18px 20px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;color:var(--glass-ink)}
+.ctrl label{font-weight:600}
+.ctrl input{flex:1 1 220px;accent-color:var(--sun);min-width:0}
+.ctrl output{font-variant-numeric:tabular-nums;min-width:11ch;text-align:right;color:var(--sun)}
+
+/* serviços */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.card p{margin:0;color:var(--muted);font-size:1rem}
+
+/* fotos */
+.photos{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.ph{aspect-ratio:4/3;border-radius:12px;border:1.5px dashed var(--line);background:var(--surface);display:grid;place-items:center;color:var(--muted);text-align:center;padding:12px;font-size:.95rem}
+
+/* avaliações */
+.rev{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.stars{color:var(--sun);letter-spacing:2px;margin-bottom:8px}
+.rev p{margin:0 0 12px}
+.rev b{font-weight:600}
+
+/* info */
+.info{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.info h3{font-size:1.15rem;margin-bottom:10px}
+.info p{margin:0 0 6px}
+table{border-collapse:collapse;width:100%}
+td{padding:6px 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;color:var(--muted)}
+footer{background:var(--glass);color:#9db1b0;padding:28px 0;font-size:.95rem;margin-top:24px}
+.zap{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tint{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="#topo">[Nome da Loja]</a>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+  <div class="hero" id="topo">
+    <div class="wrap">
+      <h1>Insulfilm bem aplicado, sem bolha e com garantia.</h1>
+      <p>Aplicamos película em carros, casas e comércios. Menos calor, mais privacidade e proteção contra o sol, com acabamento limpo.</p>
+      <a class="btn" href="https://wa.me/55DDDNUMERO" rel="noopener">Pedir orçamento no WhatsApp</a>
+      <a class="btn alt" href="#servicos">Ver serviços</a>
+
+      <div class="demo" aria-label="Simulador de escurecimento da película">
+        <div class="scene">
+          <div class="sun"></div><div class="hills"></div>
+          <div class="tint" id="tint"></div>
+          <div class="frame"></div>
+        </div>
+        <div class="ctrl">
+          <label for="range">Arraste para ver como a película muda a luz</label>
+          <input type="range" id="range" min="5" max="70" value="35">
+          <output id="out" for="range">Passa 35% da luz</output>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="servicos">
+  <div class="wrap">
+    <h2>O que a gente faz</h2>
+    <p class="lead">Escolha o tom e a gente indica a película certa para o seu caso, explicando também o que a lei permite em cada vidro do carro.</p>
+    <div class="grid">
+      <div class="card"><h3>Insulfilm automotivo</h3><p>Todos os vidros do carro, com corte preciso e acabamento nas bordas.</p></div>
+      <div class="card"><h3>Residencial</h3><p>Janelas e portas de vidro com menos calor e mais privacidade, sem perder a luz natural.</p></div>
+      <div class="card"><h3>Comercial e predial</h3><p>Fachadas, vitrines e escritórios. Conforto para quem trabalha e economia no ar-condicionado.</p></div>
+      <div class="card"><h3>Película de segurança</h3><p>Deixa o vidro mais resistente e segura os estilhaços em caso de quebra.</p></div>
+      <div class="card"><h3>Remoção e troca</h3><p>Tiramos a película velha, arroxeada ou com bolhas e aplicamos uma nova.</p></div>
+      <div class="card"><h3>Orçamento sem compromisso</h3><p>Mande uma foto do carro ou da janela e a gente passa o valor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="fotos" style="padding-top:0">
+  <div class="wrap">
+    <h2>Nosso trabalho</h2>
+    <p class="lead">Alguns serviços feitos na loja.</p>
+    <div class="photos">
+      <div class="ph">Foto da loja por fora</div>
+      <div class="ph">Foto de um carro aplicado</div>
+      <div class="ph">Foto de uma janela residencial</div>
+      <div class="ph">Foto da equipe trabalhando</div>
+    </div>
+  </div>
+</section>
+
+<section id="avaliacoes" style="padding-top:0">
+  <div class="wrap">
+    <h2>O que os clientes dizem</h2>
+    <p class="lead">Troque estes textos por avaliações reais do Google quando tiver.</p>
+    <div class="grid">
+      <div class="rev"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>Ficou perfeito, sem nenhuma bolha. Fiz em um dia e já saí com o carro pronto.</p><b>Cliente 1</b></div>
+      <div class="rev"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>Atendimento honesto, explicaram a diferença entre as películas e o preço foi justo.</p><b>Cliente 2</b></div>
+      <div class="rev"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>Fiz em casa e a diferença no calor da sala foi grande. Recomendo.</p><b>Cliente 3</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" style="padding-top:0">
+  <div class="wrap">
+    <h2>Onde estamos</h2>
+    <p class="lead">Pode passar na loja ou chamar no WhatsApp.</p>
+    <div class="info">
+      <div>
+        <h3>Endereço</h3>
+        <p>[Rua e número], [Bairro]<br>[Cidade] – [UF]</p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=ENDERECO+DA+LOJA" rel="noopener">Abrir no Google Maps</a></p>
+      </div>
+      <div>
+        <h3>Horário</h3>
+        <table>
+          <tr><td>Segunda a sexta</td><td>8h às 18h</td></tr>
+          <tr><td>Sábado</td><td>8h às 13h</td></tr>
+          <tr><td>Domingo</td><td>Fechado</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <p>WhatsApp: <a href="https://wa.me/55DDDNUMERO" rel="noopener">([DDD]) [número]</a></p>
+        <p>Instagram: <a href="#" rel="noopener">@[usuario]</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<a class="btn zap" href="https://wa.me/55DDDNUMERO" rel="noopener">WhatsApp</a>
+
+<footer>
+  <div class="wrap">© 2026 [Nome da Loja]. Todos os direitos reservados.</div>
+</footer>
+
+<script>
+  var r = document.getElementById('range'), t = document.getElementById('tint'), o = document.getElementById('out');
+  function upd(){ var v = +r.value; t.style.opacity = (1 - v/100).toFixed(2); o.textContent = 'Passa ' + v + '% da luz'; }
+  r.addEventListener('input', upd); upd();
+</script>
+</body>
+</html>
